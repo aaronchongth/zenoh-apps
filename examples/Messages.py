@@ -1,15 +1,16 @@
 #!/usr/bin/python3
 
 import pickle
-from typing import NamedTuple, List
+from typing import List
+from recordclass import RecordClass
 
 
-class Time(NamedTuple):
+class Time(RecordClass):
     sec: int
     nanosec: int
 
 
-class RobotMode(NamedTuple):
+class RobotMode(RecordClass):
     mode: int
     
     MODE_IDLE = 0
@@ -22,7 +23,7 @@ class RobotMode(NamedTuple):
     MODE_DOCKING = 7
 
 
-class Location(NamedTuple):
+class Location(RecordClass):
     t: Time
     x: float
     y: float
@@ -30,7 +31,7 @@ class Location(NamedTuple):
     level_name: str
 
 
-class RobotState(NamedTuple):
+class RobotState(RecordClass):
     name: str
     model: str
     task_id: str

@@ -24,6 +24,8 @@ git clone https://github.com/eclipse-zenoh/zenoh-python
 
 ## Distributed tests
 
+### Basic throughput
+
 Some of the tests and examples I followed the examples of 
 
 Start the server on the main/server work station,
@@ -58,4 +60,29 @@ The subscription-side should start printing the rate of which messages are recei
 91303.605488 msgs/sec
 91984.811468 msgs/sec
 90945.055545 msgs/sec
+```
+
+### Messages with multiple fields and types
+
+Start the `zenoh` session,
+
+```bash
+zenohd --verbose
+```
+
+Start the server on one machine,
+
+```bash
+git clone https://github.com/aaronchongth/zenoh-apps
+cd zenoh-apps/examples
+
+python3 Server.py
+```
+
+On another machine, start the client and provide the session IP, give it a name for easier identification,
+
+```bash
+cd zenoh-apps/examples
+
+python3 Client.py --name client_1 --locator SESSION_IP
 ```
