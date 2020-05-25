@@ -15,8 +15,6 @@ def listener(rname, data, info):
         state_msg.name,
         state_msg.location.t.sec))
 
-    print(state_msg)
-
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
