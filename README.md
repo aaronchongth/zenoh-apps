@@ -16,7 +16,7 @@ echo "deb [trusted=yes] http://pkgs.adlink-labs.tech/debian/18.04 ./" | sudo tee
 sudo apt update && sudo apt install zenoh
 
 # install the python SDK and its dependencies
-pip3 install scikit-build cmake eclipse-zenoh
+pip3 install scikit-build cmake eclipse-zenoh recordclass
 
 # pull in the repository to get access to the examples
 git clone https://github.com/eclipse-zenoh/zenoh-python

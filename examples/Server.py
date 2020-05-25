@@ -11,6 +11,10 @@ from zenoh.net import Session, SubscriberMode
 
 def listener(rname, data, info):
     state_msg = pickle.loads(data)
+    print('Received state from [{}], iteration: {}'.format(
+        state_msg.name,
+        state_msg.location.t.sec))
+
     print(state_msg)
 
 
